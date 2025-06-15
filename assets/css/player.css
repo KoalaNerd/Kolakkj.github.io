@@ -1,0 +1,180 @@
+/* Estilos específicos para o Player de Música */
+
+.player-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d20aff;
+    border-radius: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.album-cover {
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.album-cover-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+/* Classes para animação de transição de imagens com slide */
+.slide-out-left {
+    transform: translateX(-100%);
+}
+
+.slide-out-right {
+    transform: translateX(100%);
+}
+
+.slide-in-left {
+    transform: translateX(-100%);
+}
+
+.slide-in-right {
+    transform: translateX(100%);
+}
+
+.current {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.song-info {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.song-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+.artist-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Barra de Progresso */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 30%;
+    transition: width 0.1s linear;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+/* Controles do Player */
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-play-pause {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #d20aff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-play-pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade do Player */
+@media (max-width: 480px) {
+    .album-cover, .album-cover-container {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .song-name {
+        font-size: 1.3rem;
+    }
+    
+    .btn-play-pause {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .album-cover, .album-cover-container {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .player-controls {
+        max-width: 350px;
+    }
+}

@@ -1,0 +1,69 @@
+/* Estilos específicos para o Cronômetro de Relacionamento */
+
+.timer-section {
+    padding: 1.5rem;
+}
+
+.timer-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.timer-card {
+    background-color: #282828;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.timer-value {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    color: #CCCCCC;
+    text-transform: uppercase;
+}
+
+/* Animações do Cronômetro */
+@keyframes highlight {
+    0% { color: #FFFFFF; }
+    50% { color: #FF3131; }
+    100% { color: #FFFFFF; }
+}
+
+.highlight {
+    animation: highlight 1s ease;
+}
+
+/* Responsividade do Cronômetro */
+@media (max-width: 480px) {
+    .timer-value {
+        font-size: 1.8rem;
+    }
+    
+    .timer-label {
+        font-size: 0.7rem;
+    }
+    
+    .timer-card {
+        padding: 0.8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .timer-value {
+        font-size: 2.5rem;
+    }
+    
+    .timer-row {
+        margin-bottom: 1.5rem;
+    }
+}
