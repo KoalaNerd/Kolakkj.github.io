@@ -1,0 +1,572 @@
+/* Estilos Gerais */
+@import url('https://fonts.googleapis.com/css2?family=Gotham:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Tela de Boas-vindas */
+.welcome-screen, .player-screen {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+}
+
+.welcome-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #111111;
+    border-radius: 20px;
+    margin: 2rem 1rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+}
+
+.title .highlight {
+    color: #d20aff;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #d20aff;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(210, 10, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(210, 10, 255, 0.6);
+}
+
+.btn-message {
+    background-color: #FFFFFF;
+    color: #d20aff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+    margin-top: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-message:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Navegação Inferior */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #111111;
+    padding: 1rem 0;
+    width: 100%;
+    border-top: 1px solid #333333;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 33.33%;
+}
+
+.nav-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.nav-btn span {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* Removidas as bordas coloridas dos botões de navegação */
+.nav-btn:nth-child(1), .nav-btn:nth-child(2), .nav-btn:nth-child(3) {
+    border-top: none;
+}
+
+.nav-btn.active {
+    color: #d20aff;
+}
+
+/* Tela do Player */
+.player-screen {
+    display: none;
+    background-color: #000000;
+    padding-bottom: 5rem;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: #d20aff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.btn-back, .btn-options {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-back:hover, .btn-options:hover {
+    transform: scale(1.1);
+}
+
+.song-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.song-title::after {
+    content: '💙';
+    margin-left: 0.5rem;
+}
+
+/* Player Section */
+.player-content {
+    background-color: #d20aff;
+    padding: 2rem 1.5rem;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.album-cover {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.song-info {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.song-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #FFFFFF;
+}
+
+.artist-name {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.progress-container {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 30%;
+    transition: width 0.1s linear;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-play-pause {
+    width: 60px;
+    height: 60px;
+    background-color: #FFFFFF;
+    color: #d20aff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-play-pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Seções */
+.couple-section, .timer-section, .relationship-section {
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    background-color: #222222;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.message-section {
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    background-color: #d20aff;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.section-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Sobre o Casal */
+.couple-photo {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-couple-image {
+    width: 85%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
+.couple-info {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.couple-names {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.couple-since {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+/* Timer Section */
+.timer-section {
+    background-color: #222222;
+    padding: 1.5rem;
+    margin-top: 0;
+}
+
+.timer-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.timer-card {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background-color: #282828;
+    border-radius: 10px;
+    margin: 0 0.3rem;
+    transition: transform 0.3s ease;
+}
+
+.timer-card:hover {
+    transform: translateY(-5px);
+}
+
+.timer-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #FFFFFF;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* Mensagem Especial */
+.message-section {
+    background-color: #d20aff;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.message-content {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.message-content.expanded {
+    max-height: 1000px;
+}
+
+/* Seção Seu Relacionamento */
+.relationship-section {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background-color: #000000;
+}
+
+.relationship-image {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.relationship-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    filter: hue-rotate(0deg); /* Ajustado para manter a cor roxa original */
+}
+
+.relationship-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.relationship-subtitle {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-wrapped {
+    background-color: #d20aff;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(210, 10, 255, 0.4);
+}
+
+.btn-wrapped:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(210, 10, 255, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.9rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .couple-section, .timer-section, .message-section, .relationship-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .timer-value {
+        font-size: 1.8rem;
+    }
+    
+    .timer-label {
+        font-size: 0.7rem;
+    }
+    
+    .main-couple-image {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .welcome-screen, .player-screen {
+        max-width: 600px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .timer-value {
+        font-size: 2.5rem;
+    }
+    
+    .main-couple-image {
+        max-width: 350px;
+    }
+}
+
+/* Efeito de ondulação nos botões */
+.btn-primary:active, .btn-message:active, .control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.slide-transition {
+    transition: transform 0.3s ease-in-out;
+}
